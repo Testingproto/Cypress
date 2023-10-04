@@ -1,23 +1,12 @@
 name: End-to-end tests
-
-on:
-  push:
-    branches:
-      - main
-
+on: push
 jobs:
   cypress-run:
     runs-on: ubuntu-22.04
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Install npm dependencies
-        run: npm install
-
-      - name: Run Cypress tests
-        run: npx cypress run
-
-      - name: Run specific Cypress test file (facebook1.js)
-        run: npx cypress run --spec "cypress/integration/examples/facebook1.js"
+      # Install npm dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
