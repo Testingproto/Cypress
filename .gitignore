@@ -1,0 +1,14 @@
+# Ignore Node.js modules
+node_modules/
+
+# Ignore Cypress video and screenshot files
+cypress/videos/
+cypress/screenshots/
+
+# Ignore editor-specific files
+.vscode/
+.idea/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
