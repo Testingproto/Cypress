@@ -5,7 +5,7 @@ import commands from '../../support/defaultfunctions/Allcomands'
 describe("Facebook",()=>{
    beforeEach(()=>{
       cy.visit('/')
-      cy.findByRole('link', { name: "English (UK)" }).click();
+      // cy.findByRole('link', { name: "English (UK)" }).click();
    })
 
    it("Facebook sign up and then log out",()=>{
