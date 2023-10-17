@@ -1,4 +1,0 @@
-{
-    "testFiles": ["**/*.js"],
-    "testTags": "@smoke"
-  }
