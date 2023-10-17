@@ -16,7 +16,7 @@ jobs:
             headed: true
             spec: cypress/integration/examples/facebook1.js
         env:
-          CYPRESS_FILTER: smoke
+          CYPRESS_FILTER: 'smoke'
       - uses: actions/upload-artifact@v3
         # add the line below to store screenshots only on failures
         if: failure()
