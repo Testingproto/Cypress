@@ -10,7 +10,7 @@ jobs:
       # Install npm dependencies, cache them correctly
       # and run only the test case with description "smoke"
       - name: Cypress run
-        run: npx cypress run --spec "cypress/integration/examples/facebook1.js"
+        run: node_modules/.bin/cypress run --spec "cypress/integration/examples/facebook1.js"
         env:
           CYPRESS_FILTER: smoke
       - uses: actions/upload-artifact@v3
