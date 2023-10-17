@@ -8,8 +8,8 @@ jobs:
         uses: actions/checkout@v4
       # Install npm dependencies, cache them correctly
       # and run all Cypress tests
-      - name: Copy Cypress Config
-        run: cp cypress-smoke.json ${{ github.workspace }}/cypress-smoke.json
+      - name: List Directory
+        run: ls -R ${{ github.workspace }}
 
       - name: Cypress run
         uses: cypress-io/github-action@v6
@@ -17,7 +17,7 @@ jobs:
             browser: chrome
             headed: true
             spec: cypress/integration/examples/facebook1.js
-            config-file: cypress-smoke.json
+            config-file: ${{ github.workspace }}/cypress-smoke.json
             
         env:
           CYPRESS_FILTER: 'smoke'
