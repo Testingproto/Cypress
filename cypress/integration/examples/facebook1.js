@@ -62,7 +62,7 @@ describe("Facebook",()=>{
       Commands.termsLink().eq(1).click()
       cy.go('back')
    })
-   it('clicking on terms link by using href cy.visit',()=>{
+   it('smoke',()=>{
       const Commands = new commands();
       cy.findByTestId('open-registration-form-button').click();
       Commands.termsLink1()
