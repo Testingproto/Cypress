@@ -2,4 +2,3 @@
     "testFiles": ["**/*.js"],
     "testTags": "@smoke"
   }
-  
