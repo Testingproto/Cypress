@@ -63,9 +63,10 @@ describe("Facebook",()=>{
       cy.go('back')
    })
    it('smoke',()=>{
+      
       const Commands = new commands();
       cy.findByTestId('open-registration-form-button').click();
       Commands.termsLink1()
       cy.go('back')
-   }).tags('smoke')
+   }, { tags: ['smoke','error'] })
 })
