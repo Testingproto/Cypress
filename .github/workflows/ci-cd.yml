@@ -15,7 +15,7 @@ jobs:
             browser: chrome
             headed: true
             spec: cypress/integration/examples/facebook1.js
-            config-file: cypress/cypress-smoke.json
+            config-file: ${{ github.workspace }}cypress/cypress-smoke.json
             
         env:
           CYPRESS_FILTER: 'smoke'
