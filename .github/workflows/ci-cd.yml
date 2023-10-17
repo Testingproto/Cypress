@@ -6,27 +6,22 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       # Install npm dependencies, cache them correctly
-      # and run all Cypress tests
-      
+      # and run only the test case with description "smoke"
       - name: Cypress run
-        uses: cypress-io/github-action@v6
-        with:
-            browser: chrome
-            headed: true
-            spec: cypress/integration/examples/facebook1.js
+        run: npx cypress run --spec "cypress/integration/examples/facebook1.js"
         env:
           CYPRESS_FILTER: smoke
       - uses: actions/upload-artifact@v3
-        # add the line below to store screenshots only on failures
         if: failure()
         with:
           name: cypress-screenshots
           path: cypress/screenshots
-          if-no-files-found: ignore # 'warn' or 'error' are also available, defaults to `warn`
+          if-no-files-found: ignore
       - uses: actions/upload-artifact@v3
         if: always()
         with:
           name: cypress-videos
           path: cypress/videos
-          if-no-files-found: ignore # 'warn' or 'error' are also available, defaults to `warn`
+          if-no-files-found: ignore
