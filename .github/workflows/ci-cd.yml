@@ -14,10 +14,10 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
+            command: npx cypress run
             browser: chrome
             headed: true
             spec: cypress/integration/examples/facebook1.js
-            config-file: ${{ github.workspace }}/cypress-smoke.json
             
         env:
           CYPRESS_FILTER: 'smoke'
