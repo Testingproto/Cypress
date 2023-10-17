@@ -11,10 +11,10 @@ jobs:
       
       - name: Cypress run
         uses: cypress-io/github-action@v6
-        # with:
-        #     browser: chrome
-        #     headed: true
-        #     spec: cypress/integration/examples/facebook1.js
+        with:
+            browser: chrome
+            headed: true
+            spec: cypress/integration/examples/facebook1.js
         env:
           CYPRESS_FILTER: smoke
       - uses: actions/upload-artifact@v3

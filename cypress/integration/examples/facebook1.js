@@ -9,10 +9,6 @@ describe("Facebook",()=>{
    })
 
    it("Facebook sign up and then log out",()=>{
-      if (Cypress.env('CYPRESS_FILTER') && !Cypress.env('CYPRESS_FILTER').includes('smoke')) {
-         Cypress.log({ name: 'Test Skipped', displayName: 'smoke' })
-         return
-      }
    cy.on('uncaught:exception', () => false)
    const Commands = new commands();
     //taking random email address by using math.random
@@ -61,23 +57,15 @@ describe("Facebook",()=>{
     cy.findByRole('radio',{name: "Female"}).check().should('be.checked');
    })
    it('clicking on terms link',()=>{
-      if (Cypress.env('CYPRESS_FILTER') && !Cypress.env('CYPRESS_FILTER').includes('smoke')) {
-         Cypress.log({ name: 'Test Skipped', displayName: 'smoke' })
-         return
-      }
       const Commands = new commands();
       cy.findByTestId('open-registration-form-button').click();
       Commands.termsLink().eq(1).click()
       cy.go('back')
    })
    it('smoke',()=>{
-      if (Cypress.env('CYPRESS_FILTER') && !Cypress.env('CYPRESS_FILTER').includes('smoke')) {
-         Cypress.log({ name: 'Test Skipped', displayName: 'smoke' })
-         return
-      }
       const Commands = new commands();
       cy.findByTestId('open-registration-form-button').click();
       Commands.termsLink1()
       cy.go('back')
-   })
+   }).tags('smoke')
 })
